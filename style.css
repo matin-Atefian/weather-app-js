@@ -18,18 +18,19 @@ body {
     background-image: url(assest/6f6a0565-96eb-4dda-8c8f-9c0d9a8afdf0.webp);
   }
   20% {
-    background-image: url(assest/download.jpg);
+    background-image: url(assest/blue-sky-3840x2160.jpg);
   }
   40% {
-    background-image: url(assest/download\ \(1\).jpg);
+    background-image: url(assest/aerial-view-colorful-mixed-forest-shrouded-morning-fog-beautiful-autumn-day.jpg);
   }
   60% {
-    background-image: url(assest/images.jpg);
+    background-image: url(assest/lake-surrounded-with-forest-with-gloomy-gray-sky.jpg);
   }
   80% {
-    background-image: url(assest/images\ \(1\).jpg);
+    background-image: url(assest/scenic-mountains-landscape-after-rain-carpathians-ukraine.jpg);
   }
   100% {
+    background-image: url(assest/colorful-sky-after-sunset.jpg);
   }
 }
 body::before {
