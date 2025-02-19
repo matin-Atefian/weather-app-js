@@ -6,7 +6,7 @@
 }
 body {
   background-image: url(assest/6f6a0565-96eb-4dda-8c8f-9c0d9a8afdf0.webp);
-  animation: bgChange 180s normal infinite;
+  animation: bgChange 100s none infinite;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -18,19 +18,18 @@ body {
     background-image: url(assest/6f6a0565-96eb-4dda-8c8f-9c0d9a8afdf0.webp);
   }
   20% {
-    background-image: url(assest/download.jpg);
+    background-image: url(assest/clouds-sunset-sky-4k_1541117838.jpg);
   }
   40% {
-    background-image: url(assest/download\ \(1\).jpg);
+    background-image: url(assest/04c9ed935567b70808210d1075503f79.jpg);
   }
   60% {
-    background-image: url(assest/images.jpg);
+    background-image: url(assest/blue-sky-3840x2160.jpg);
   }
   80% {
-    background-image: url(assest/images\ \(1\).jpg);
+    background-image: url(assest/6f6a0565-96eb-4dda-8c8f-9c0d9a8afdf0.webp);
   }
-  100%{
-
+  100% {
   }
 }
 body::before {
