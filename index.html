@@ -4,16 +4,220 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>weather app</title>
+    <!-- css link -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="main">
-      <div class="box-1 bg"></div>
-      <div class="box-2 bg"></div>
-      <div class="box-3 bg"></div>
-      <div class="box-4 bg"></div>
-    </div>
+      <div class="box-1 bg">
+        <div class="header">
+          <div class="serach-input">
+            <input class="city" type="text" placeholder="serach city" />
 
+            <button class="search-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="white"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="main-Information">
+          <div class="main-Information-child-1">
+            <div class="n-city">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="rgb(255,255,255,0.8)"
+                class="bi bi-geo-alt-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+                />
+              </svg>
+              <h1>Tehren</h1>
+            </div>
+            <div class="temperature">
+              <h2>2°C</h2>
+            </div>
+            <div class="ds">
+              <span> cloudy</span>
+            </div>
+            <div class="ds">
+              <span>8° / 2°</span>
+            </div>
+          </div>
+          <div class="main-Information-child-2">
+            <img src="assest/cloud/cloud.png" alt="" width="100%" />
+          </div>
+          <div class="main-Information-child-3">
+            <div class="parent-info">
+              <div class="info">
+                <div class="title-info">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-sun-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"
+                    />
+                  </svg>
+                  <span> UV index</span>
+                </div>
+                <h2 class="info-va">Low</h2>
+              </div>
+              <div class="info">
+                <div class="title-info">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-wind"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5m-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2M0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5"
+                    />
+                  </svg>
+                  <span>Wind</span>
+                </div>
+                <h2>14 Km/h</h2>
+              </div>
+            </div>
+            <div class="parent-info">
+              <div class="info">
+                <div class="title-info">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-droplet-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6M6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13"
+                    />
+                  </svg>
+                  <span>Humidity</span>
+                </div>
+                <h2>51%</h2>
+              </div>
+              <div class="info">
+                <div class="title-info">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-eye"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"
+                    />
+                    <path
+                      d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"
+                    />
+                  </svg>
+                  <span>Visibility</span>
+                </div>
+                <h2>11.27 Km</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-2 bg">
+        <div class="week">
+          <div class="day">
+            <h4>Today</h4>
+            <img src="assest/cloud/cloud.png" alt="" width="75px" />
+            <div><span>24°</span>/<span>13°</span></div>
+          </div>
+          <div class="day">
+            <h4>Mon</h4>
+            <img src="assest/cloud/night.png" alt="" width="75px" />
+            <div><span>22°</span>/<span>17°</span></div>
+          </div>
+          <div class="day">
+            <h4>Tue</h4>
+            <img src="assest/cloud/weather (1).png" alt="" width="75px" />
+            <div><span>21°</span>/<span>15°</span></div>
+          </div>
+          <div class="day">
+            <h4>Wed</h4>
+            <img src="assest/cloud/weather (2).png" alt="" width="75px" />
+            <div><span>20°</span>/<span>16°</span></div>
+          </div>
+          <div class="day">
+            <h4>Tur</h4>
+            <img src="assest/cloud/weather (4).png" alt="" width="75px" />
+            <div><span>22°</span>/<span>15°</span></div>
+          </div>
+          <div class="day">
+            <h4>Fri</h4>
+            <img src="assest/cloud/cloud.png" alt="" width="75px" />
+            <div><span>25°</span>/<span>16°</span></div>
+          </div>
+          <div class="day">
+            <h4>Sat</h4>
+            <img src="assest/cloud/weather.png" alt="" width="75px" />
+            <div><span>24°</span>/<span>17°</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="box-3 bg">
+        <div class="hours">
+          <div class="hour">
+            <span>00.00</span>
+            <img src="assest/cloud/weather (3).png" alt="cloud" width="100px" />
+            <span>18 °c</span>
+          </div>
+          <div class="hour">
+            <span>04.00</span>
+            <img src="assest/cloud/cloud.png" alt="cloud" width="100px" />
+            <span>19 °c</span>
+          </div>
+          <div class="hour">
+            <span>08.00</span>
+            <img src="assest/cloud/cloud.png" alt="cloud" width="100px" />
+            <span>22 °c</span>
+          </div>
+          <div class="hour">
+            <span>12.00</span>
+            <img src="assest/cloud/weather (4).png" alt="cloud" width="100px" />
+            <span>23 °c</span>
+          </div>
+          <div class="hour">
+            <span>16.00</span>
+            <img src="assest/cloud/weather (1).png" alt="cloud" width="100px" />
+            <span>24 °c</span>
+          </div>
+          <div class="hour">
+            <span>20.00</span>
+            <img src="assest/cloud/weather (1).png" alt="cloud" width="100px" />
+            <span>24 °c</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- js link -->
     <script src="app.js"></script>
   </body>
 </html>
