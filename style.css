@@ -5,8 +5,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  background-image: url(assest/6f6a0565-96eb-4dda-8c8f-9c0d9a8afdf0.webp);
-
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -19,16 +17,19 @@ h1 {
   font-size: 50px;
   color: rgb(255, 255, 255, 0.8);
 }
+h2{
+  display: inline-block;
+}
 img{
   display: block;
 }
 /* image slider */
 @keyframes bgChange {
   0% {
-    background-image: url(assest/6f6a0565-96eb-4dda-8c8f-9c0d9a8afdf0.webp);
+    background-image: url(assest/blue-sky-3840x2160.jpg);
   }
   20% {
-    background-image: url(assest/blue-sky-3840x2160.jpg);
+    background-image: url(assest/6f6a0565-96eb-4dda-8c8f-9c0d9a8afdf0.webp);
   }
   40% {
     background-image: url(assest/aerial-view-colorful-mixed-forest-shrouded-morning-fog-beautiful-autumn-day.jpg);
