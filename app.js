@@ -1,7 +1,8 @@
 const inputCity = document.querySelector(".city"); // input
 const btn = document.querySelector(".search-btn"); // search button
 const key = "0108ac33831114c3c54918242d8b47de"; //Api key
-let name = document.querySelector(".name");
+let namee = document.querySelector(".name");
+let nameCountry = document.querySelector(".name-country");
 let tempe = document.querySelector(".temp");
 let tempe_max = document.querySelector(".tempe-max");
 let tempe_min = document.querySelector(".tempe-min");
@@ -58,13 +59,14 @@ async function weatherInfo(city) {
   const weatherData = await fechData("weather", city);
 
   const {
-    name: country,
+    name: name,
     main: { temp, humidity, temp_max, temp_min, pressure },
     weather: [{ id, main }],
     wind: { speed },
     visibility: visibility,
+    sys: { country },
   } = weatherData;
-  name.textContent = country;
+  namee.textContent = name;
   tempe.textContent = Math.floor(temp - 273);
   tempe_max.textContent = Math.floor(temp_max - 273) + "°";
   tempe_min.textContent = Math.floor(temp_min - 273) + "°";
@@ -72,6 +74,7 @@ async function weatherInfo(city) {
   coundition.textContent = main;
   windspeed.textContent = Math.round(speed);
   vis.textContent = visibility / 1000;
+  nameCountry.textContent = country;
   infoVa.textContent = pressure;
 
   weatherImg.src = `assest/cloud/${weathericon(id)}`;
@@ -117,7 +120,7 @@ function updateForecasItems(weatherData) {
             />
             <div><span class="temp-forecast">${Math.round(
               temp - 273
-            )}</span><span>°</span></div>
+            )}</span><span>°c</span></div>
           </div>`;
   week.insertAdjacentHTML("beforeend", forecastItem);
 }
