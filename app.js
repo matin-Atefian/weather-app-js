@@ -64,8 +64,6 @@ async function weatherInfo(city) {
     wind: { speed },
     visibility: visibility,
   } = weatherData;
-  console.log(visibility);
-
   name.textContent = country;
   tempe.textContent = Math.floor(temp - 273);
   tempe_max.textContent = Math.floor(temp_max - 273) + "°";
@@ -75,7 +73,7 @@ async function weatherInfo(city) {
   windspeed.textContent = Math.round(speed);
   vis.textContent = visibility / 1000;
   infoVa.textContent = pressure;
-  date1.textContent = getcurrrentDate();
+
   weatherImg.src = `assest/cloud/${weathericon(id)}`;
   await updateForecasInfo(city);
   console.log(weatherData);
@@ -90,9 +88,8 @@ async function updateForecasInfo(city) {
       forecastweather.dt_txt.includes(timeTaken) &&
       !forecastweather.dt_txt.includes(todayDate)
     ) {
-     updateForecasItems(forecastweather)
-     console.log(forecastweather);
-     
+      updateForecasItems(forecastweather);
+      console.log(forecastweather);
     }
   });
 }
@@ -119,7 +116,7 @@ function updateForecasItems(weatherData) {
               width="75px"
             />
             <div><span class="temp-forecast">${Math.round(
-              temp
+              temp - 273
             )}</span><span>°</span></div>
           </div>`;
   week.insertAdjacentHTML("beforeend", forecastItem);
