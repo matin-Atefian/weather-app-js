@@ -13,7 +13,6 @@ let vis = document.querySelector(".vis");
 let infoVa = document.querySelector(".info-va");
 let weatherImg = document.querySelector(".cloud");
 let week = document.querySelector(".week");
-
 let hours = document.querySelector(".hours");
 let date1 = document.querySelector(".date");
 // serach button
@@ -56,7 +55,6 @@ function getcurrrentDate() {
 }
 async function weatherInfo(city) {
   const weatherData = await fechData("weather", city);
-
   const {
     name: name,
     main: { temp, humidity, temp_max, temp_min, pressure },
@@ -79,12 +77,10 @@ async function weatherInfo(city) {
   weatherImg.src = `assest/cloud/${weathericon(id)}`;
   await updateForecasInfo(city);
 }
-
 async function updateForecasInfo(city) {
   const forecasInfo = await fechData("forecast", city);
   const timeTaken = "12:00:00";
   const todayDate = new Date().toISOString().split("T")[0];
-
   week.innerHTML = "";
   hours.innerHTML = "";
   forecasInfo.list.forEach((forecastweather) => {
