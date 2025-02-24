@@ -13,6 +13,8 @@ let vis = document.querySelector(".vis");
 let infoVa = document.querySelector(".info-va");
 let weatherImg = document.querySelector(".cloud");
 let week = document.querySelector(".week");
+
+let hours = document.querySelector(".hours");
 let date1 = document.querySelector(".date");
 // serach button
 btn.addEventListener("click", () => {
@@ -26,12 +28,10 @@ btn.addEventListener("click", () => {
 //serach with enter
 inputCity.addEventListener("keydown", (event) => {
   if (event.key == "Enter" && inputCity.value.trim() != "") {
-    // console.log(inputCity.value);
     weatherInfo(inputCity.value);
     inputCity.value = "";
     inputCity.blur();
   }
-  //  console.log(event);
 });
 async function fechData(endPoint, city) {
   const url = `https://api.openweathermap.org/data/2.5/${endPoint}?q=${city}&appid=${key}`;
@@ -44,7 +44,6 @@ function weathericon(id) {
   if (id <= 622) return "weather (3).png";
   if (id <= 800) return "weather.png";
   else return "cloud.png";
-  console.log(id);
 }
 function getcurrrentDate() {
   const currrentDate = new Date();
@@ -66,6 +65,7 @@ async function weatherInfo(city) {
     visibility: visibility,
     sys: { country },
   } = weatherData;
+  console.log(weatherData);
   namee.textContent = name;
   tempe.textContent = Math.floor(temp - 273);
   tempe_max.textContent = Math.floor(temp_max - 273) + "°";
@@ -76,23 +76,29 @@ async function weatherInfo(city) {
   vis.textContent = visibility / 1000;
   nameCountry.textContent = country;
   infoVa.textContent = pressure;
-
   weatherImg.src = `assest/cloud/${weathericon(id)}`;
   await updateForecasInfo(city);
-  console.log(weatherData);
 }
+
 async function updateForecasInfo(city) {
   const forecasInfo = await fechData("forecast", city);
   const timeTaken = "12:00:00";
   const todayDate = new Date().toISOString().split("T")[0];
+
   week.innerHTML = "";
+  hours.innerHTML = "";
   forecasInfo.list.forEach((forecastweather) => {
     if (
       forecastweather.dt_txt.includes(timeTaken) &&
       !forecastweather.dt_txt.includes(todayDate)
     ) {
       updateForecasItems(forecastweather);
-      console.log(forecastweather);
+    }
+  });
+  forecasInfo.list.forEach((forecastweatherhour) => {
+    if (forecastweatherhour.dt_txt.includes(todayDate)) {
+      console.log(forecastweatherhour);
+      updateForecasHour(forecastweatherhour);
     }
   });
 }
@@ -102,7 +108,6 @@ function updateForecasItems(weatherData) {
     weather: [{ id }],
     main: { temp },
   } = weatherData;
-
   const dateTaken = new Date(date);
   const dateOption = {
     day: "2-digit",
@@ -111,16 +116,37 @@ function updateForecasItems(weatherData) {
   const dateResult = dateTaken.toLocaleDateString("en-US", dateOption);
 
   const forecastItem = `
-          <div class="day">
-            <h4 class="date">${dateResult}</h4>
-            <img
-              class="img-forecast"
-              src="assest/cloud/${weathericon(id)}"
-              width="75px"
-            />
-            <div><span class="temp-forecast">${Math.round(
-              temp - 273
-            )}</span><span>°c</span></div>
-          </div>`;
+                       <div class="day">
+                         <h4 class="date">${dateResult}</h4>
+                         <img
+                           class="img-forecast"
+                           src="assest/cloud/${weathericon(id)}"
+                           width="75px"
+                         />
+                         <div><span class="temp-forecast">${Math.round(
+                           temp - 273
+                         )}</span><span>°c</span></div>
+                       </div>`;
   week.insertAdjacentHTML("beforeend", forecastItem);
+}
+function updateForecasHour(forecasInfo) {
+  const {
+    dt_txt: date,
+    weather: [{ id }],
+    main: { temp },
+  } = forecasInfo;
+  const dateTaken = new Date(date);
+  const dateOption = {
+    hour: "2-digit",
+  };
+  const dateResult = dateTaken.toLocaleDateString("en-US", dateOption);
+
+  const forecastItemhour = `
+                       <div class="hour">
+            <span>${dateResult}</span>
+            <img   src="assest/cloud/${weathericon(
+              id
+            )}"(3).png" alt="cloud" width="100px" />
+            <span>${Math.round(temp - 273)}°c</span>`;
+  hours.insertAdjacentHTML("beforeend", forecastItemhour);
 }
