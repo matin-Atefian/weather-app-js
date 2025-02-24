@@ -96,10 +96,8 @@ async function updateForecasInfo(city) {
     }
   });
   forecasInfo.list.forEach((forecastweatherhour) => {
-    if (forecastweatherhour.dt_txt.includes(todayDate)) {
-      console.log(forecastweatherhour);
-      updateForecasHour(forecastweatherhour);
-    }
+    console.log(forecastweatherhour);
+    updateForecasHour(forecastweatherhour);
   });
 }
 function updateForecasItems(weatherData) {

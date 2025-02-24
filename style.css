@@ -159,6 +159,7 @@ body::before {
   grid-column: 1/5;
   margin: 5px;
   align-content: center;
+  overflow: hidden;
 }
 
 /* background */
@@ -201,6 +202,7 @@ body::before {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  height: 100%;
 }
 .hour {
   display: flex;
@@ -208,10 +210,11 @@ body::before {
   justify-content: center;
   align-items: center;
   padding: 15px 10px;
-  border: 3px solid rgb(255, 255, 255, 0.5);
+  border: 5px solid rgb(255, 255, 255, 0.3);
   border-radius: 20px;
+  height: 45%;
   width: 23%;
-  margin: 5px;
+  margin: 10px;
 }
 .hour span {
   font-size: 24px;
