@@ -140,7 +140,7 @@ function updateForecasHour(forecasInfo) {
             <span>${dateResult}</span>
             <img   src="assest/cloud/${weathericon(
               id
-            )}"(3).png" alt="cloud" width="100px" />
+            )}"(3).png" alt="cloud" width="85px" />
             <span>${Math.round(temp - 273)}°c</span>`;
   hours.insertAdjacentHTML("beforeend", forecastItemhour);
 }
